@@ -254,6 +254,9 @@ func (s *scope) reportRegistryWithLock() {
 	if s.reporter != nil {
 		s.reporter.Flush()
 	}
+	if s.cachedReporter != nil {
+		s.cachedReporter.Flush()
+	}
 }
 
 func (s *scope) Counter(name string) Counter {
